@@ -1,24 +1,5 @@
 # List of all domains being operated by Google Inc.
-include:android
-include:blogspot
-include:dart
-include:fastlane
-include:firebase
-include:flutter
-include:golang
-include:google-ads
-include:google-deepmind
-include:google-gemini
-include:google-play
-include:google-registry
-include:google-scholar
-include:google-trust-services
-include:googlefcm
-include:kaggle
-include:opensourceinsights
-include:polymer
-include:v8
-include:youtube
+
 
 # All .and domains
 and
@@ -395,7 +376,6 @@ gooogle.com
 gridaware.app
 gsrc.io
 gstatic.cn @cn
-gstatic.com
 gstaticcnapps.cn @cn
 gsuite.com
 gv.com
