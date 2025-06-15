@@ -1,0 +1,31 @@
+name: Generate go.sum
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+
+      - name: Run go mod tidy
+        run: go mod tidy
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add go.mod go.sum
+          # 只在有文件变动时才提交
+          if ! git diff --staged --quiet; then
+            git commit -m "Automated: go mod tidy"
+            git push
+          else
+            echo "No changes to commit."
+          fi
